@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="pytania2.js"></script>
+    <style>
+        .tresc {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="tresc"></div>
+    <script>
+        // console.log(pytania[0].odp1.tresc)
+        // console.log(pytania[0].odp1)         
+
+        // for(i = 0; i < 4; i++) {
+        //     var tresc = `pytania[1].odp${i}.tresc`;
+        //     var dupa = 'tresc';
+        //     console.log(window.tresc)
+
+        //     var aaa = window.tresc;
+        //     console.log(aaa);
+
+            
+        //     let trescDiv = `- ${tresc} <br>`;
+
+        //     // console.log(`aaa ${pytania[0].odp}${i}${.tresc} bbb`)
+            
+        //     document.querySelector('.tresc').insertAdjacentHTML('beforeend', trescDiv);
+        // } 
+        var trescDiv = "";
+        for(i = 0; i < pytania[0].answers.length; i++) {
+            var tresc = pytania[0].answers[i][0];
+            console.log(tresc)
+
+            
+            trescDiv += `- ${tresc} <br>`;
+
+            // console.log(`aaa ${pytania[0].odp}${i}${.tresc} bbb`)
+            
+            
+        } 
+
+        console.log(trescDiv)
+
+        document.querySelector('.tresc').insertAdjacentHTML('beforeend', trescDiv);
+
+
+    </script>
+</body>
+</html>
+
+
