@@ -32,6 +32,7 @@ function adresURL(param) {
 }
 
 // FIREBASE START
+istqb = false;
 
 var db = firebase.firestore();
 
@@ -62,7 +63,7 @@ function dzialy(dzial) {
         return dzialLink = '<a href="?dzial=4" class="dzialLink">' + dzial + '</a>';
     }
 }
-istqb = false;
+
 function getWpisy(wpis,i) {
     if(istqb) return;
     dzial = wpis.data().dzial;    
@@ -224,4 +225,3 @@ btnNo.addEventListener('click', (e) => {
     e.preventDefault();
     popupConfirm.classList.toggle('hideConfirm');
 })
-

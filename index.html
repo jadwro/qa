@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QA Team</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
             <div class="naglowek">
                 <div class="logo_title">
                     <div class="logo_img">
-                        <img src="img/itm.svg" alt="Logo Śląska" class="logo_slask">
+                        <!-- <img src="img/itm.svg" alt="Logo Śląska" class="logo_slask"> -->
                     </div>
                     <div class="tytuldiv">
                         <h2 class="tytul"></h2>
@@ -51,12 +51,19 @@
         <nav class="tag_menu">
             <div class="menu-container">
                 <div class="menu-item underline">
-                    <a href="#slownik" class="link_menu">
+                    <a href="./slownik" class="link_menu">
                         <div class="main-menu-title">
                             Słownik
                         </div>
                     </a>
                 </div>
+                <div class="menu-item underline">
+                    <a href="./istqb" class="link_menu">
+                        <div class="main-menu-title underline">
+                            ISTQB
+                        </div>
+                    </a>
+                </div>                
                 <div class="menu-item">
                     <a href="#2" class="link_menu">
                         <div class="main-menu-title">
@@ -75,13 +82,6 @@
                         </div>
                     </div>
                 </div>                
-                <div class="menu-item underline">
-                    <a href="#3" class="link_menu">
-                        <div class="main-menu-title underline">
-                            Menu 3
-                        </div>
-                    </a>
-                </div>
                 <div class="menu-item underline">
                     <a href="#4" class="link_menu">
                         <div class="main-menu-title underline">
@@ -204,31 +204,7 @@
                     </div>     
                 </div>
             </div>
-
-            <div class="quiz">
-                <div class="pytanie">
-                    <!-- <div class="pyt-tresc">
-                        Które z poniższych stwierdzeń NAJLEPIEJ opisuje podział zadań pomiędzy kierownika testów a testera?
-                    </div>                    
-                    <div class="pyt-odp">
-                        <form class="pyt-form">
-                            <input type="radio" id="quiz-a" name="pytOdp" value="1">
-                            <label for="quiz-a">Kierownik testów planuje i nadzoruje czynności testowe, a tester automatyzuje testy.</label>
-                            <br/><br/>
-                            <input type="radio" id="quiz-b" name="pytOdp" value="2">
-                            <label for="quiz-b">Kierownik testów planuje i organizuje czynności testowe oraz specyfikuje przypadki testowe, a tester ustala priorytety i wykonuje testy.</label>
-                            <br/><br/>
-                            <input type="radio" id="quiz-c" name="pytOdp" value="3">
-                            <label for="quiz-c">Kierownik testów planuje, monitoruje i nadzoruje czynności testowe, a tester projektuje testy i podejmuje decyzje o wdrożeniu testowanego obiektu.</label>
-                            <br/><br/>
-                            <input type="radio" id="quiz-d" name="pytOdp" value="4">
-                            <label for="quiz-d">Kierownik testów planuje czynności testowe i wybiera standardy, których należy przestrzegać, a tester wybiera stosowane narzędzia i sposób ich użycia.</label>
-                            <br/><br/>
-                            <button class="quizbtn-next">Dalej</button>
-                        </form>
-                    </div> -->
-                </div>
-            </div>
+           
         </div>    
     </main>
 
@@ -250,8 +226,8 @@
 <!-- End of Firebase DB import -->
 
     <script src="https://kit.fontawesome.com/c1aa217e9d.js" crossorigin="anonymous"></script>
-    <script src="jquery.js"></script>
-    <script src="./main.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
