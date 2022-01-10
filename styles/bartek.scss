@@ -1,0 +1,870 @@
+@import url("https://fonts.googleapis.com/css2?family=Lusitana&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Brygada+1918:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+@import "var";
+@import "respons";
+@import url("header.css");
+@import url("menu.css");
+
+:root {
+    --primary-col: rgb(38, 94, 199);
+    --secondary-col: white;
+    --ternary-col: #252525;
+    --optional-1: rgb(252, 255, 95);;
+  }
+  
+
+* {
+  box-sizing: border-box;
+  font-family: 'Spline Sans', sans-serif; 
+  margin: 0px;
+  padding: 0px;
+}
+
+*::selection {
+  background-color: darkgreen;
+  color: white;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(240, 240, 240);
+  background-attachment: fixed;
+  background-image: url(../img/slask.gif);
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-col);
+    //background: white;
+    //border-radius: 10px;
+    //box-shadow: inset 0px 0px 5px green;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-col);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+    transition: all 0.5s ease-out;
+}
+
+.main {
+    margin-left: 3rem;
+}
+
+.grey {
+    width: 95%;
+    max-width: 1400px;
+    min-height: 990px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: var(--primary-col);;
+    padding: 10px 10px 10px 10px;
+    margin: auto;
+    margin-top: 10px;
+    -webkit-box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+
+.grid-photo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 6%;
+  width: $contentWidth;
+  margin: 0 auto;
+  padding: 1.4rem 1rem;
+  overflow: hidden;
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  transition: all 500ms ease;
+  margin: 1.2rem 0rem;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+
+    .photo-text {
+      top: 1rem;
+      color: black;
+      text-shadow: none;
+      -webkit-text-stroke-width: 0px;
+      -webkit-text-stroke-color: none;
+
+      p {
+        transform: scale(1);
+      }
+    }
+
+    .img-container {
+      img {
+        opacity: 0.3;
+        transform: scale(1.4);
+      }
+    }
+  }
+
+  &:hover .photo-text h2::before {
+    width: 120%;
+    left: -10%;
+    transition: all 500ms;
+    transition-delay: 320ms;
+  }
+}
+
+.img-container {
+  border-radius: 10px;
+  transition: all 500ms;
+  overflow: hidden;
+  height: 200px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 10px;
+    transition: all 500ms;
+  }
+}
+
+.photo-text {
+  position: absolute;
+  top: 78%;
+  width: 95%;
+  color: white;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: top 500ms ease, color 500ms ease;
+  text-shadow: 2px 2px 10px black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+
+  p {
+    color: black;
+    transform: scale(0);
+    transition: all 200ms;
+    margin-top: 1rem;
+    text-align: justify;
+  }
+
+  h2 {
+    position: relative;
+    display: inline;
+    font-size: 1.5rem;
+    width: max-content;
+    text-align: left;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0%;
+      left: -30%;
+      // right: 0;
+      height: 6px;
+      background-image: linear-gradient(to right, darkgreen, white, red);
+      top: 110%;
+      border-radius: 5px;
+      // transition: all 500ms;
+      // transition-delay: 500ms;
+    }
+  }
+}
+
+
+// SŁOWNIK
+
+.slownik {
+  padding: 0.6rem;
+  width: $contentWidth;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  color: var(--primary-col) !important;
+  background-color: var(--secondary-col);
+  //border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+}
+
+.slownik-nagl {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0rem;    
+
+    h1 {
+        font-family: 'Spline Sans', sans-serif;
+        font-size: 3rem;
+        margin-bottom: 0rem;
+        text-shadow: 0px 0px 0px white;
+        color: var(--primary-col);
+    }
+
+    i {
+        position: absolute;
+        right: 1.2rem;
+        font-size: 2.2rem;
+        transition: 300ms;
+
+        &:hover {
+            color: var(--ternary-col);
+            cursor: pointer;
+            transform: scale(1.5);
+        }
+    }
+}
+
+.fa-plus-circle {
+    position: relative;
+    
+    &::after {
+        content: "Dodaj wpis";
+        width: 50px;
+        position: absolute;
+        right: 110%;
+        bottom: 50%;
+        text-align: center;
+        font-size: 0.6rem;
+        color: black;
+        font-weight: bold;
+        background-color:white;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 2px 1px;
+        transition: 300ms;
+        transition: transform 200ms;
+        transform: scale(0);
+    }
+
+    &:hover::after {
+        transform: scale(1);
+    }
+}
+
+.slownik-siatka {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1.7rem;
+  margin: 1rem;
+}
+
+.sl-tytul-wrap {
+    font-family: 'Spline Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icons {
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+    }
+
+    .sl-tytul {        
+        width: 100%;
+        color: var(--secondary-col);
+        margin-bottom: 1rem;
+    }
+
+    .sl-tytul::first-letter {
+        text-transform: uppercase;
+    }
+
+    .fas {
+        font-size: 1.2rem;
+        transition: 300ms;
+        color: var(--secondary-col);
+        margin-bottom: 1rem;
+    }
+
+    .fa-trash-alt, .fa-edit {
+        position: relative;
+        margin-left: 0.5rem;
+        
+        &::after {
+            width: max-content;
+            position: absolute;
+            top: -1.4rem;
+            left: -1rem;
+            font-size: 0.55rem;
+            color: black;
+            font-weight: bold;
+            background-color:white;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 2px 1px;
+            display: none;
+        }
+        &:hover::after {
+            display: block;
+        }
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.5);
+        }
+    }
+
+    .fa-trash-alt::after {
+        content: 'Usuń wpis';
+    }
+
+    .fa-edit::after {
+        content: 'Edytuj wpis';
+    }
+
+    .fa-trash-alt:hover {
+        color: red;
+    }
+
+    .fa-edit:hover {
+        color: cadetblue;
+    }
+}
+
+.sl-autor {
+    color: var(--secondary-col);
+    font-size: 0.9rem;
+    text-align: end;
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.slownik-karta {
+    background-color: var(--primary-col);
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: -1px 1px 10px 0px rgba(0,0,0,0.75);
+    transition: transform 120ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.15);
+        box-shadow: -1px 1px 20px 0px rgba(0,0,0,0.75);
+        color: var(--primary-col);
+        background-color: var(--ternary-col);
+        transition: all 120ms ease-in-out;
+        // outline: 1px solid black;
+    }
+
+    .sl-dzial {
+        color: var(--secondary-col);
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-col);
+        }
+    }
+    .sl-tresc {
+        color: var(--secondary-col);
+        text-align: left;
+        line-height: 1.4rem;
+    }
+    .sl-tresc::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+// .lista-dzialow {
+//     font-size: 0.8rem;
+
+//     a {
+//         text-decoration: none;
+//         color: $textColor;
+//     }
+// }
+
+.popupAdd, .popupEdit, .popupConfirm {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000ed;
+    z-index: 9999;
+}
+
+.hideAdd {
+    display: none;
+}
+
+.hideEdit {
+    display: none;
+}
+
+.hideConfirm {
+    display: none;
+}
+
+.slownik-dodaj, .slownik-edytuj {
+    color: var(--secondary-col);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    background: var(--primary-col);
+    margin: 4rem auto;
+    padding-bottom: 2rem;
+    width: 40%;
+    min-width: 250px;   
+    text-align: center;
+    box-shadow: 0px 0px 20px white;
+    border-radius: 15px;
+
+    input, textarea, select {
+        display: block;
+        padding: 0.5rem;
+        margin: 0.5rem 0 1rem 0;
+        width: 100%;
+        resize: none;
+        outline: none;
+        border-radius: 15px;
+    }
+
+    h1 {
+        margin: 3rem 0;
+    }
+}
+
+.form-dodaj, .form-edit {
+    width: 400px;
+    text-align: left;
+}
+
+.guzik {
+    padding: 1rem;
+    width: 200px;
+    border: 0px solid var(--ternary-col);
+    inset: 0px;
+    border-radius: 15px;
+    background-color: white;
+    transition: all 120ms ease-in-out;
+    outline: none;
+
+    &:hover {
+        border-radius: 0;
+        background-color: var(--ternary-col);
+        cursor: pointer;
+    }
+}
+
+.slownik-confirm {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -140%);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    background: #f7f7f7;
+    margin: 4rem auto;
+    padding: 2rem;
+    width: 40%;
+    min-width: 250px;   
+    text-align: center;
+    box-shadow: 0px 0px 20px white;
+}
+
+// QUIZ
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.6rem;
+    width: 100%;
+    margin: 5rem auto;
+    margin-top: 1rem;
+    color: $textColor;
+    background-color: #fffffa;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.quiz-nagl {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;    
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-shadow: 1px 1px 2px black;
+        color: #5a5a5a;
+    }
+
+    i {
+        position: absolute;
+        right: 1.2rem;
+        font-size: 2.2rem;
+        transition: 300ms;
+
+        &:hover {
+            color: green;
+            cursor: pointer;
+            transform: scale(1.5);
+        }
+    }
+}
+
+.fa-sync-alt {
+    position: relative;
+    
+    &::after {
+        content: "Zacznij od nowa";
+        width: 50px;
+        position: absolute;
+        right: 110%;
+        bottom: 50%;
+        text-align: center;
+        font-size: 0.6rem;
+        color: black;
+        font-weight: bold;
+        background-color:white;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 2px 1px;
+        transition: 300ms;
+        transition: transform 200ms;
+        transform: scale(0);
+    }
+
+    &:hover::after {
+        transform: scale(1);
+    }
+}
+
+.pytanie {
+    width: 50%;
+}
+
+.pyt-tresc {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    margin-bottom: 0.7rem;
+    text-align: justify;
+
+
+    span {
+        font-size: 1rem;
+    }
+}
+
+input[type="radio"]:checked+label {
+    box-shadow: 0 0 0 1px orange;
+    background-color: green;
+
+    .selected {
+        font-size: 5rem;
+    }
+}
+
+.odp {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ecebeb;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 200ms;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: justify;
+
+    &:hover {
+        outline: 1px solid green;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.507);       
+    }
+
+    label {
+        margin-left: 1rem;
+        text-align: justify;
+        cursor: pointer;
+    }
+    input {
+        margin-right: 1rem;
+    }
+}
+
+.odp-sum-wrap {
+    background-color: #f7f7f7;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: -1px 1px 10px 0px rgba(0,0,0,0.75);
+    transition: transform 90ms linear;
+    margin-bottom: 2.5rem;
+}
+
+.odp-sum {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 15px;
+    transition: 100ms;
+}
+
+.h1-score {
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid silver;
+
+    .yes {
+        color: green;
+        font-size: 1.8rem;
+    }
+    .no {
+        color: red;
+        font-size: 1.8rem;
+    }
+}
+
+.quiz-btns {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .noAnswer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: red;
+        display: none;
+    }
+
+}
+
+.quizbtn-next, .quizbtn-prev, .quizbtn-show, .quizbtn, .quizbtn-again {
+    padding: 1rem;
+    width: 150px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+.quizbtn-show {
+    width: 250px;
+}
+
+#ilepyt {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    width: 200px;
+}
+
+.btn-ile {
+    width: 200px;
+}
+
+.goodAns {
+    background-color: green;
+    color: white;
+}
+
+.wrongAns {
+    background-color: red;
+    color: white;
+}
+
+.btn-again {
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: -1px 1px 10px 0px rgba(0,0,0,0.75);    
+    border-radius: 10px;    
+    transition: 500ms;
+    background-color: #f9f9f9;
+
+    &:hover {
+        transform: scale(1.1);
+        color: green;
+    }
+
+    button {
+        padding: 1rem;
+        width: 100%;
+        font-size: 1.8rem;
+        // font-weight: bold;
+        background: none;  
+        border: none;          
+        cursor: pointer;
+        letter-spacing: 0.2rem;
+        
+        &:hover {
+            color: green;
+        }
+    }
+}
+
+.ukryj {
+    // display: none;
+    transform: scale(0);
+}
+footer {
+  margin: 100px;
+  height: 100px;
+  width: 1px;
+}
+
+
+
+
+// Animacje
+@keyframes wjazd {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+// RWD
+@media only screen and (min-width: 1600px) {
+    .slownik-siatka {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}    
+
+@media only screen and (max-width: 920px) {
+  .grid-photo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .photo-text {
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 0.85rem;
+    }
+  }
+  .slownik-siatka {
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .form-dodaj, .form-edit {
+        width: 200px;
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 740px) {   
+    .menu-container {
+        display: none;
+    }
+    .side-menu {
+        bottom: 0;
+        top: auto;
+        width: 100vw;
+        height: 4rem;
+
+        &:hover {
+            height: 4rem;
+            width: 100vw;
+            .arrows {
+                transform: rotate(90deg)
+            }
+        }
+    }
+    .main {
+        margin-left: 0px;
+    }
+    .arrow {
+        transform: rotate(-90deg);
+        display: none;
+    }
+    .side-menu-text {
+        display: none;
+    }
+    .side-menu-list {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .side-menu-item { 
+        justify-content: center;
+        overflow: hidden;
+        border: 0;
+        width: 100%;
+    
+        i {
+            font-size: 2rem;
+            color: green;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) { 
+    body {
+        background-position: center;
+    }
+    .tytul {
+        font-size: 2rem;
+    }
+
+    .line3 {
+        margin-right: 5px;
+    }
+
+    .image {
+        width: 8rem;
+    }
+    .grid-photo {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .photo {
+        margin: 1.5rem 0.5rem;
+      }
+      .photo-text {
+        h2 {
+          font-size: 2.4rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .slownik-siatka {
+        grid-template-columns: repeat(1, 1fr);
+    }
+} 
