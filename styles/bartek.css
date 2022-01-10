@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Brygada+1918:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("header.css");
 @import url("menu.css");
 @media only screen and (max-width: 740px) {
@@ -40,10 +41,10 @@
 }
 
 :root {
-  --primary-col: rgb(38, 94, 199);
-  --secondary-col: white;
+  --primary-col: #265ec7;
+  --secondary-col: #fff;
   --ternary-col: #252525;
-  --optional-1: rgb(252, 255, 95);
+  --optional-1: #fcff5f;
 }
 
 * {
@@ -70,16 +71,35 @@ html {
 }
 
 body {
-  background-color: #f0f0f0;
-  background-attachment: fixed;
-  background-image: url(../img/slask.gif);
-  left: 0;
-  top: 0;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.9);
-  background-blend-mode: overlay;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #252525;
+  background: linear-gradient(-45deg, #252525 0%, #265ec7 100%);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 7s ease alternate infinite;
+          animation: gradient 7s ease alternate infinite;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -105,6 +125,55 @@ body {
   margin-left: 3rem;
 }
 
+.tytul {
+  position: relative;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  text-transform: uppercase;
+  font-family: 'Alegreya', serif;
+  font-weight: 900;
+  color: var(--secondary-col);
+  font-size: 5.5rem;
+  margin-bottom: 4px;
+}
+
+.social {
+  position: absolute;
+  right: 0.1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.social p {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  margin: 1rem 0px;
+}
+
+.social p:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.social a {
+  font-size: 2rem;
+  color: var(--secondary-col);
+  line-height: 1.8rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.social a:hover {
+  color: var(--ternary-col);
+}
+
 .grey {
   width: 95%;
   max-width: 1400px;
@@ -116,12 +185,13 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: var(--primary-col);
+  background: #252525;
+  background: linear-gradient(45deg, #252525 0%, #265ec7 65%);
   padding: 10px 10px 10px 10px;
   margin: auto;
   margin-top: 10px;
-  -webkit-box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
 }
 

@@ -2,16 +2,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Brygada+1918:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "var";
 @import "respons";
 @import url("header.css");
 @import url("menu.css");
 
 :root {
-    --primary-col: rgb(38, 94, 199);
-    --secondary-col: white;
+    --primary-col: #265ec7;
+    --secondary-col: #fff;
     --ternary-col: #252525;
-    --optional-1: rgb(252, 255, 95);;
+    --optional-1: #fcff5f;
   }
   
 
@@ -33,16 +34,28 @@ html {
 }
 
 body {
-  background-color: rgb(240, 240, 240);
-  background-attachment: fixed;
-  background-image: url(../img/slask.gif);
-  left: 0;
-  top: 0;
-  z-index: 1;
-  background-color: hsla(0, 0%, 100%, 0.9);
-  background-blend-mode: overlay;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: rgb(37,37,37);
+  background: linear-gradient(-45deg, rgba(37,37,37,1) 0%, rgba(38,94,199,1) 100%);
+  background-size: 400% 400%;
+  animation: gradient 7s ease alternate infinite;
+  //background-attachment: fixed;
+  //background-image: url(../img/QA_JUNIOR_TEAM.svg);
+  //z-index: 1;
+  //background-color: hsla(0, 0%, 100%, 0.9);
+  //background-blend-mode: overlay;
+  //background-repeat: no-repeat;
+}
+
+@keyframes gradient {
+    0%   {
+        background-position: 100% 0%;
+    }
+    50%   {
+        background-position: 50% 0%;
+    }
+    100%   {
+        background-position: 0% 0%;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -70,6 +83,51 @@ body {
     margin-left: 3rem;
 }
 
+.tytul {
+    position: relative;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    text-transform: uppercase;
+    font-family: 'Alegreya', serif;
+    font-weight: 900;
+    color: var(--secondary-col);
+    //font-family: 'Brygada 1918', serif;
+    font-size: 5.5rem;
+    margin-bottom: 4px;
+    // background-color: blueviolet;
+}
+
+.social {
+    position: absolute;
+    right: 0.1rem;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    
+
+    & p {
+        transform: scale(1);
+        transition: 200ms;     
+        margin: 1rem 0px;   
+
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+
+    & a {
+        font-size: 2rem;
+        color: var(--secondary-col);
+        line-height: 1.8rem;
+        transition: 200ms;
+
+        &:hover {
+            color: var(--ternary-col);
+        }
+    }
+}
+
 .grey {
     width: 95%;
     max-width: 1400px;
@@ -81,12 +139,13 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background-color: var(--primary-col);;
+            background: rgb(37,37,37);
+            background: linear-gradient(45deg, rgba(37,37,37,1) 0%, rgba(38,94,199,1) 65%);
     padding: 10px 10px 10px 10px;
     margin: auto;
     margin-top: 10px;
-    -webkit-box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
 }
 
@@ -473,6 +532,7 @@ body {
     &:hover {
         border-radius: 0;
         background-color: var(--ternary-col);
+        //transform: ;
         cursor: pointer;
     }
 }
