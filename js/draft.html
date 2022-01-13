@@ -16,39 +16,52 @@
     <div class="tresc"></div>
     <script>
         // console.log(pytania[0].odp1.tresc)
-        // console.log(pytania[0].odp1)         
-
+        // console.log(pytania[0].odp1)
+        
+        // var pytania = [
+        //     {
+        //         odp0: {
+        //             tresc: "0"
+        //         }
+        //     },
+        //     {
+        //         odp1: {
+        //             tresc: "1"
+        //         }
+        //     },
+        //     {
+        //         odp2: {
+        //             tresc: "2"
+        //         }
+        //     },
+        //     {
+        //         odp3: {
+        //             tresc: "3"
+        //         }
+        //     }
+        // ];
+        //     console.log(pytania[0].odp1.tresc)
         // for(i = 0; i < 4; i++) {
-        //     var tresc = `pytania[1].odp${i}.tresc`;
-        //     var dupa = 'tresc';
-        //     console.log(window.tresc)
-
-        //     var aaa = window.tresc;
-        //     console.log(aaa);
-
-            
-        //     let trescDiv = `- ${tresc} <br>`;
-
-        //     // console.log(`aaa ${pytania[0].odp}${i}${.tresc} bbb`)
+        //     var tresc = `${pytania[0].odp[i].tresc}`;
             
         //     document.querySelector('.tresc').insertAdjacentHTML('beforeend', trescDiv);
         // } 
-        var trescDiv = "";
-        for(i = 0; i < pytania[0].answers.length; i++) {
-            var tresc = pytania[0].answers[i][0];
-            console.log(tresc)
+        // var trescDiv = "";
+        // for(i = 0; i < pytania[0].answers.length; i++) {
+        //     var tresc = pytania[0].answers[i][0];
+        //     console.log(tresc)
 
             
-            trescDiv += `- ${tresc} <br>`;
+        //     trescDiv += `- ${tresc} <br>`;
 
-            // console.log(`aaa ${pytania[0].odp}${i}${.tresc} bbb`)
+        //     console.log(`aaa ${pytania[0].odp}${i}${.tresc} bbb`)
             
             
-        } 
+        // } 
 
-        console.log(trescDiv)
+        // console.log(trescDiv)
 
-        document.querySelector('.tresc').insertAdjacentHTML('beforeend', trescDiv);
+        // document.querySelector('.tresc').insertAdjacentHTML('beforeend', trescDiv);
 
 
     </script>

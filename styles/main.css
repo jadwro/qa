@@ -675,7 +675,7 @@ body {
 }
 
 .pyt-tresc {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.7rem;
   margin-bottom: 0.7rem;
   text-align: justify;
@@ -710,7 +710,7 @@ input[type="radio"]:checked + label .selected {
   cursor: pointer;
   -webkit-transition: 200ms;
   transition: 200ms;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.5rem;
   text-align: justify;
 }
@@ -731,6 +731,64 @@ input[type="radio"]:checked + label .selected {
   margin-right: 1rem;
 }
 
+:root {
+  --hintContent: 'aaa';
+}
+
+.trescOdp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.trescOdp i {
+  font-size: 1.1rem;
+}
+
+.trescOdp .trescOdpHint {
+  position: relative;
+  padding: 0.3rem 1rem;
+  height: 100%;
+}
+
+.trescOdp .trescOdpHint::after {
+  content: attr(data-hint);
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 300px;
+  left: -100%;
+  bottom: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px 1px;
+  -webkit-transition: -webkit-transform 100ms;
+  transition: -webkit-transform 100ms;
+  transition: transform 100ms;
+  transition: transform 100ms, -webkit-transform 100ms;
+  -webkit-box-shadow: -3px 3px 10px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: -3px 3px 10px 0px rgba(0, 0, 0, 0.75);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.trescOdp .trescOdpHint:hover::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 .odp-sum-wrap {
   background-color: #f7f7f7;
   padding: 1rem;
@@ -742,6 +800,10 @@ input[type="radio"]:checked + label .selected {
   transition: transform 90ms linear;
   transition: transform 90ms linear, -webkit-transform 90ms linear;
   margin-bottom: 2.5rem;
+}
+
+.odp-sum-wrap h3 {
+  font-size: 1.0rem;
 }
 
 .odp-sum {
@@ -757,6 +819,7 @@ input[type="radio"]:checked + label .selected {
   border-radius: 15px;
   -webkit-transition: 100ms;
   transition: 100ms;
+  font-size: 0.9rem;
 }
 
 .h1-score {
