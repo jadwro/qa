@@ -31,6 +31,20 @@ function adresURL(param) {
     return new URL(window.location.href).searchParams.get(param);
 }
 
+function changeStyles() {
+    // document.getElementById('darkStyle').disabled  = false;
+    // document.getElementById('lightStyle').disabled  = true;
+    document.getElementById('lightStyle').href = "./styles/bartek.css"
+    console.log(document.getElementById('lightStyle').href)
+}
+
+document.querySelector('.fa-facebook').onclick = () => {
+    document.getElementById('lightStyle').href = "./styles/bartek.css";
+}
+document.querySelector('.fa-instagram').onclick = () => {
+    document.getElementById('lightStyle').href = "./styles/main.css";
+}
+
 // FIREBASE START
 
 
